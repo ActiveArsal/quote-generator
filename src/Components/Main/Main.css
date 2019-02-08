@@ -1,0 +1,122 @@
+.component {
+    padding: 7rem 3rem 2rem;
+    margin: 5rem auto;
+    width: 50%;
+    color: #fff;
+
+    background: linear-gradient(to right bottom, #ffb900, #ff7730);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .35);
+    border-radius: 5px;
+    z-index: 2;
+    overflow: initial;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .component {
+        width: 70%;
+        padding: 6rem 3rem 2rem;
+    }
+
+    .header {
+        font-size: 3rem !important;
+    }
+
+    .sub-header {
+        padding-bottom: 2rem !important;
+    }
+
+    .form {
+        margin: 3rem auto !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .component {
+        padding: 1.5rem 3rem 1rem !important;
+        margin: 2rem auto;
+    }
+
+    .button {
+        font-size: 1.5rem !important;
+        padding: 1rem !important;
+    }
+
+    .input {
+        padding: 1rem !important;
+        margin: 0 !important;
+        font-size: 1.5rem !important;
+    }
+
+    .quote {
+        margin-top: 2rem !important;
+        font-size: 1.7rem !important;
+    }
+
+    .form {
+        margin: 2.5rem auto !important;
+    }
+}
+
+
+
+
+.center {
+    text-align: center;
+}
+
+
+.header{
+    font-size: 4rem;
+    text-shadow: 0px 3px 3px rgba(0,0,0,.3);
+    letter-spacing: 2px;
+    margin: 0;
+
+}
+
+.sub-header{
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+    transform: skewX(-5deg);
+    color: black;
+
+}
+
+.button {
+    color: inherit;
+    padding: 1.5rem;
+    background: #a136ff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .12);
+    text-shadow: 0px 1px 1px rgba(0,0,0,.4);
+    margin: 0 1rem;
+    font-size: 2rem;
+    transition: all .2s;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.form {
+    margin: 4rem auto;
+}
+
+.input {
+    border-radius: 5px;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .12);
+    margin: 0 1rem;
+    font-size: 2rem;
+    width: 25%;
+}
+
+.quote {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 2rem;
+    transform: skewX(-7deg);
+    text-shadow: 0px 1px 1px rgba(0,0,0,.3);
+}
