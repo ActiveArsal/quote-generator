@@ -16,29 +16,6 @@ class Main extends React.Component {
         });
     }
 
-    // getRandomQuote = () => {
-    //     fetch('https://api.whatdoestrumpthink.com/api/v1/quotes/random')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log(data.message);
-    //             this.setState({
-    //                 message: data.message
-    //             });
-    //         })
-    //         .catch(error => console.log(error))
-    // }
-
-    // getPersonalQuote = () => {
-    //     fetch(`https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=${this.state.name}`)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log(data.message);
-    //             this.setState({
-    //                 message: data.message
-    //             });
-    //         })
-    //         .catch(error => console.log(error))
-    // }
 
     getQuote = (url) => {
         fetch(url)
@@ -56,7 +33,14 @@ class Main extends React.Component {
 
     getQuotePersonal = () => this.getQuote(`https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=${this.state.name}`);
 
-
+    validatePersonalQuote = () => {
+        if(!this.state.name.length){
+            alert('Please enter a name in the "Name" field.');
+        }
+        else {
+            this.getQuotePersonal();
+        }
+    }
 
 
     render(){
@@ -68,13 +52,10 @@ class Main extends React.Component {
                     </header>
                     <div className='center'>
                         <button className='button' onClick={this.getQuoteRandom}>Random Quote</button>
-                        {/* <div className='form'>
-                            <input className='input' onChange={(el) => { this.setState({ name: el.target.value }) }} placeholder='Name' type="text" required />
-                            <button className='button' onClick={this.getPersonalQuote}>Personal Quote</button>
-                        </div> */}
                         <div className='form'>
                             <input className='input' onChange={(el) => { this.setState({ name: el.target.value }) }} placeholder='Name' type="text" required />
-                            <button className='button' onClick={this.getQuotePersonal}>Personal Quote</button>
+                            {/* <button className='button' onClick={this.getQuotePersonal}>Personal Quote</button> */}
+                            <button className='button' onClick={this.validatePersonalQuote}>Personal Quote</button>
                         </div>
                         <h3 className='quote'>"{this.state.message}" - Donald J. Trump</h3>
                     </div>
