@@ -16,7 +16,6 @@ class Main extends React.Component {
         });
     }
 
-
     getQuote = (url) => {
         fetch(url)
             .then(response => response.json())
@@ -30,18 +29,9 @@ class Main extends React.Component {
     }
 
     getQuoteRandom = () => this.getQuote('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
-
     getQuotePersonal = () => this.getQuote(`https://api.whatdoestrumpthink.com/api/v1/quotes/personalized?q=${this.state.name}`);
 
-    validatePersonalQuote = () => {
-        if(!this.state.name.length){
-            alert('Please enter a name in the "Name" field.');
-        }
-        else {
-            this.getQuotePersonal();
-        }
-    }
-
+    validatePersonalQuote = () => (!this.state.name.length ? alert('Please enter something in the "Name" field.') : this.getQuotePersonal());
 
     render(){
         return (
@@ -54,8 +44,7 @@ class Main extends React.Component {
                         <button className='button' onClick={this.getQuoteRandom}>Random Quote</button>
                         <div className='form'>
                             <input className='input' onChange={(el) => { this.setState({ name: el.target.value }) }} placeholder='Name' type="text" required />
-                            {/* <button className='button' onClick={this.getQuotePersonal}>Personal Quote</button> */}
-                            <button className='button' onClick={this.validatePersonalQuote}>Personal Quote</button>
+                            <button className='button button-2' onClick={this.validatePersonalQuote}>Personal Quote</button>
                         </div>
                         <h3 className='quote'>"{this.state.message}" - Donald J. Trump</h3>
                     </div>
